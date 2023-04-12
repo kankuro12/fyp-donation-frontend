@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+.Menu{
+    font-family: 'Merriweather', serif;
+    background: var(--color-black);
+    color:white;
+    padding:30px 20px;
+}
+.Menu .parts .link{
+    color:white !important;
+    text-decoration: none;
+    margin: 0px 10px;
+    font-size: 0.9rem;
+
+}
+
+.Menu .parts .link:hover{
+    color: var(--color-main) !important;
+}

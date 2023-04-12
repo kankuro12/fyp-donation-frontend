@@ -6,6 +6,7 @@ import Login from "../page/auth/login.js";
 import Register from "../page/auth/register.js";
 import UserLayout from "../layout/user";
 import UserDashboard from "../page/user/dashboard";
+import HomePage from "../page/home";
 export default function Router() {
     return useRoutes([
         {
@@ -13,7 +14,7 @@ export default function Router() {
             element: <AdminLayout />,
             children: [
                 { path: "index", element: <AdminDashboard /> },
-              
+
                 { path: '', element: <Navigate to="/admin/index" replace={true} /> },
                 { path: '*', element: <Navigate to="/admin/index" replace={true} /> },
 
@@ -24,11 +25,15 @@ export default function Router() {
             element: <UserLayout />,
             children: [
                 { path: "index", element: <UserDashboard /> },
-              
+
                 { path: '', element: <Navigate to="/user/index" replace={true} /> },
                 { path: '*', element: <Navigate to="/user/index" replace={true} /> },
 
             ]
+        },
+        {
+            path: "home",
+            element: <HomePage/>
         },
         {
             path: '/login',
@@ -43,6 +48,7 @@ export default function Router() {
             element: <Forgot />,
         },
 
-        { path: '*', element: <Navigate to="/login" replace={true} /> },
+        { path: '*', element: <Navigate to="/home" replace={true} /> },
+        { path: '', element: <Navigate to="/home" replace={true} /> },
     ]);
 }
