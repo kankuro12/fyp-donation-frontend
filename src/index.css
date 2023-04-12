@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+label.imageUploader{
+  width: 100%;
+  display: block;
+}
+
+label.imageUploader>.imageHolder{
+  height: 100px;
+  border: 1px solid rgba(0,0,0,0.3);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+
+.ballot-cross{
+  cursor: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Broken_crossed_circle.svg/768px-Broken_crossed_circle.svg.png'), auto;
+
+  
+}
+
+.ballotholder{
+  position: relative;
+}
+.chap{
+  position: absolute;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.chap img{
+  opacity: 0.3;
+  height: 100%;;
+}
