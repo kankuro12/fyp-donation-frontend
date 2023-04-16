@@ -7,6 +7,10 @@ import Register from "../page/auth/register.js";
 import UserLayout from "../layout/user";
 import UserDashboard from "../page/user/dashboard";
 import HomePage from "../page/home";
+import AdminCategory from "../page/admin/category";
+import AdminOrganization from "../page/admin/organization";
+import AdminRider from "../page/admin/rider";
+import UserDonate from "../page/user/donate";
 export default function Router() {
     return useRoutes([
         {
@@ -14,6 +18,9 @@ export default function Router() {
             element: <AdminLayout />,
             children: [
                 { path: "index", element: <AdminDashboard /> },
+                { path: "category", element: <AdminCategory /> },
+                { path: "organization", element: <AdminOrganization /> },
+                { path: "rider", element: <AdminRider /> },
 
                 { path: '', element: <Navigate to="/admin/index" replace={true} /> },
                 { path: '*', element: <Navigate to="/admin/index" replace={true} /> },
@@ -25,6 +32,7 @@ export default function Router() {
             element: <UserLayout />,
             children: [
                 { path: "index", element: <UserDashboard /> },
+                { path: "donate", element: <UserDonate /> },
 
                 { path: '', element: <Navigate to="/user/index" replace={true} /> },
                 { path: '*', element: <Navigate to="/user/index" replace={true} /> },

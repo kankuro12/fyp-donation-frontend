@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { logout } from "../store/reducer";
 
 
-import { FaBeer,FaUsers } from 'react-icons/fa';
+import { FaBeer,FaBiking,FaList,FaUsers } from 'react-icons/fa';
 import { RiUserVoiceFill,RiLogoutBoxRFill } from 'react-icons/ri';
 import { BiNotepad } from 'react-icons/bi';
 
@@ -24,6 +24,9 @@ export default function NavBar({role='admin'}){
       const paths={
         admin:[
             {path:"/admin/index",title:"Dashboard",icon:<FaBeer size={30} className="icon"/>,id:1},
+            {path:"/admin/category",title:"Category",icon:<FaList size={30} className="icon"/>,id:1},
+            {path:"/admin/organization",title:"Organizations",icon:<FaList size={30} className="icon"/>,id:1},
+            {path:"/admin/rider",title:"Riders",icon:<FaBiking size={30} className="icon"/>,id:1},
           
           
         ],
@@ -33,7 +36,9 @@ export default function NavBar({role='admin'}){
     console.log(paths[role]);
     return (
         <div className="sidebar">
-            <div className="head text-white">Election</div>
+            <div className="head text-white">
+              <img src="/logo-fb.jpg" alt="" className="w-100"/>
+            </div>
             {paths[role].map((path)=>(
                     <NavLink key={path.id} className={({ isActive }) => isActive? "active link": 'link'}  to={path.path}>
                       {path.icon}

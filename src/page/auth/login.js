@@ -1,16 +1,57 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { saveAuth } from "../../store/reducer";
 import "../../styles/auth.css";
 import API from "../../api";
-import { FaEyeSlash, FaUser } from 'react-icons/fa';
+import { FaAd, FaEnvelope, FaEyeSlash, FaUser } from 'react-icons/fa';
 
 import './auth.css';
 import Menu from "../../components/menu";
 export default function Login() {
     const [mode, setMode] = useState(1);
+    const logged= useSelector((state) => state.donation.logged);
+    const user= useSelector((state) => state.donation.user);
+    const dispatch=useDispatch();
+    if(logged){
+        if(user.role=="user"){
+            return <Navigate to="/user" />;
+        }else{
+            return <Navigate to="/admin" />;
+        }
+    }
+    const login=(e)=>{
+        e.preventDefault();
+        API.post('login',API.getFormData(e.target))
+        .then((authData)=>{
+            API.setToken(authData.token);
+            dispatch(saveAuth(authData.user));
+        })
+        .catch((err)=>{
+            if(err.response){
+                alert(err.response.data.message);
+            }else{
 
+                alert("some error occured please try again");
+            }
+        });
+    }
+    const signup=(e)=>{
+        e.preventDefault();
+        API.post('register',API.getFormData(e.target))
+        .then((authData)=>{
+            API.setToken(authData.token);
+            dispatch(saveAuth(authData.user));
+        })
+        .catch((err)=>{
+            if(err.response){
+                alert(err.response.data.message);
+            }else{
+
+                alert("some error occured please try again");
+            }
+        });
+    }
     return (
         <div className="">
             <Menu />
@@ -44,14 +85,14 @@ export default function Login() {
                                                     </div>
                                                     <h2 className="h3 pb-3">LOGIN</h2>
                                                 </div>
-                                                <form>
+                                                <form onSubmit={login}>
                                                     <div className="position-relative my-3 inputGroup text-center">
                                                         <span className="position-absolute icon"> <FaUser size={22} /> </span>
-                                                        <input type="email" className="border-0 border-bottom w-100" placeholder="Enter Email Address" />
+                                                        <input type="email" name="email" className="border-0 border-bottom w-100" placeholder="Enter Email Address" />
                                                     </div>
                                                     <div className="position-relative my-3 inputGroup text-center">
                                                         <span className="position-absolute icon"> <FaEyeSlash size={22} /> </span>
-                                                        <input type="password" className="border-0 border-bottom w-100" placeholder="Password" />
+                                                        <input type="password" name="password" className="border-0 border-bottom w-100" placeholder="Password" />
                                                     </div>
                                                     <div className="d-flex align-items-center justify-content-between pt-2">
                                                         <a className="linkFlare" href="#"><small>Forgot Password?</small></a>
@@ -67,18 +108,21 @@ export default function Login() {
                                                     </div>
                                                     <h2 className="h3 pb-3">Signup</h2>
                                                 </div>
-                                                <form>
-                                                    <div className="position-relative my-3 inputGroup text-center">
+                                                <form onSubmit={signup}>
+                                                <div className="position-relative my-3 inputGroup text-center">
                                                         <span className="position-absolute icon"> <FaUser size={22} /> </span>
-                                                        <input type="email" name="email" className="border-0 border-bottom w-100" placeholder="Enter Email Address" />
+                                                        <input type="text" name="name" className="border-0 border-bottom w-100" placeholder="Enter Your Address" required />
+                                                    </div>
+                                                    <div className="position-relative my-3 inputGroup text-center">
+                                                        <span className="position-absolute icon"> <FaEnvelope size={22} /> </span>
+                                                        <input type="email" name="email" className="border-0 border-bottom w-100" placeholder="Enter Email Address" required />
                                                     </div>
                                                     <div className="position-relative my-3 inputGroup text-center">
                                                         <span className="position-absolute icon"> <FaEyeSlash size={22} /> </span>
-                                                        <input type="password" name="password" required className="border-0 border-bottom w-100" placeholder="Password" />
+                                                        <input type="password" name="password" required className="border-0 border-bottom w-100" placeholder="Password"  />
                                                     </div>
-                                                    <div className="d-flex align-items-center justify-content-between pt-2">
-                                                        <Link className="linkFlare" href="#"><small>Forgot Password?</small></Link>
-                                                        <button className="btn btn-accent px-4 rounded-pill">LOGIN</button>
+                                                    <div className="d-flex align-items-center justify-content-end pt-2">
+                                                        <button className="btn btn-accent px-4 rounded-pill">Sign Up</button>
                                                     </div>
                                                 </form>
                                             </div>

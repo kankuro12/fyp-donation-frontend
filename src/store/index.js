@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import election from './reducer';
+import donation from './reducer';
 const store = configureStore({
     reducer: {
-        election
+        donation
     }
 });
 export default store;

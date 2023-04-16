@@ -7,7 +7,7 @@ export default function AdminLayout() {
 
     const isMobile = window.innerWidth < 426;
 
-    const logged = useSelector((state) => state.election.logged);
+    const logged = useSelector((state) => state.donation.logged);
     
     if (!logged) {
         return <Navigate to="/auth" />;

@@ -13,7 +13,7 @@ export const initialState = {
 
 
 
-export const setupLogin = createAsyncThunk('election/setupLogin', async (options) => {
+export const setupLogin = createAsyncThunk('donation/setupLogin', async (options) => {
     // console.log(token, "token");
     const token = API.getToken();
     if (token) {
@@ -25,19 +25,7 @@ export const setupLogin = createAsyncThunk('election/setupLogin', async (options
         return { logged: false, user: null };
 
     }
-    //     try {
-    //         const userInfo = await API.get('user');
-    //         console.log(userInfo);
 
-    //         return { logged: true, user: userInfo }
-
-    //     } catch (error) {
-    //         return { logged: false, user: null };
-
-    //     }
-
-    // } else {
-    // }
 
 
 
@@ -45,20 +33,20 @@ export const setupLogin = createAsyncThunk('election/setupLogin', async (options
 
 
 
-export const saveAuth = createAsyncThunk('election/saveAuth', async (user) => {
+export const saveAuth = createAsyncThunk('donation/saveAuth', async (user) => {
     localStorage.setItem('user', JSON.stringify(user));
     return user;
 });
 
 
-export const logout = createAsyncThunk('election/logout', async (user) => {
+export const logout = createAsyncThunk('donation/logout', async (user) => {
     localStorage.removeItem('user');
     return null;
 });
 
 
 
-export const ElectionReducer = createSlice({
+export const donationReducer = createSlice({
     extraReducers: {
 
 
@@ -72,11 +60,12 @@ export const ElectionReducer = createSlice({
         },
         [setupLogin.fulfilled]: (state, action) => {
             const data = action.payload;
+            console.log(data,"auth checked");
             return { ...state, loader: false, user: data.user, logged: data.logged, authChecked: true }
         },
 
     },
     initialState,
-    name: 'election'
+    name: 'donation'
 })
-export default ElectionReducer.reducer;
+export default donationReducer.reducer;

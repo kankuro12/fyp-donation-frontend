@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const API = {
-    URL: "http://localhost:5000/api",
+    URL: "http://localhost:3000/api",
 
     instance: axios.create({
-        baseURL: "http://localhost:5000/api",
+        baseURL: "http://localhost:3000/api",
         headers: {
             "Content-Type": "application/json",
         },
@@ -34,7 +34,7 @@ const API = {
         }
     },
     img: (name) => {
-        return `http://localhost:5000/${name}`;
+        return `http://localhost:3000/${name}`;
     },
 
     getToken: () => {
