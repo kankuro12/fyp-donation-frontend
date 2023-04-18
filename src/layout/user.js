@@ -32,7 +32,7 @@ export default function UserLayout() {
                                     </div>
                                     <hr />
                                     <div>
-                                        <Link to="user/donation">My Donations</Link>
+                                        <Link to="/user/donations">My Donations</Link>
                                     </div>
                                     <hr />
                                     <div>

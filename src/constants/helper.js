@@ -18,4 +18,6 @@ const NormalTime = ({dateStr}) => {
     return localDateStr + " " + localTimeStr;
 }
 
-module.exports = { getLocalDate ,NormalTime};
+
+const donationStatus=["Pending","Rider Assigned","Picked Up"];
+module.exports = { getLocalDate ,NormalTime,donationStatus};

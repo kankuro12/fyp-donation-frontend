@@ -11,6 +11,8 @@ import AdminCategory from "../page/admin/category";
 import AdminOrganization from "../page/admin/organization";
 import AdminRider from "../page/admin/rider";
 import UserDonate from "../page/user/donate";
+import UserDonations from "../page/user/donations";
+import UserDonationDetail from "../page/user/donationsDetail";
 export default function Router() {
     return useRoutes([
         {
@@ -33,6 +35,8 @@ export default function Router() {
             children: [
                 { path: "index", element: <UserDashboard /> },
                 { path: "donate", element: <UserDonate /> },
+                { path: "donations", element: <UserDonations /> },
+                { path: "donation-detail/:id", element: <UserDonationDetail /> },
 
                 { path: '', element: <Navigate to="/user/index" replace={true} /> },
                 { path: '*', element: <Navigate to="/user/index" replace={true} /> },
