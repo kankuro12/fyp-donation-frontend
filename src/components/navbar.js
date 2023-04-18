@@ -24,11 +24,10 @@ export default function NavBar({role='admin'}){
       const paths={
         admin:[
             {path:"/admin/index",title:"Dashboard",icon:<FaBeer size={30} className="icon"/>,id:1},
-            {path:"/admin/category",title:"Category",icon:<FaList size={30} className="icon"/>,id:1},
-            {path:"/admin/organization",title:"Organizations",icon:<FaList size={30} className="icon"/>,id:1},
-            {path:"/admin/rider",title:"Riders",icon:<FaBiking size={30} className="icon"/>,id:1},
-          
-          
+            {path:"/admin/category",title:"Category",icon:<FaList size={30} className="icon"/>,id:2},
+            {path:"/admin/organization",title:"Organizations",icon:<FaList size={30} className="icon"/>,id:3},
+            {path:"/admin/rider",title:"Riders",icon:<FaBiking size={30} className="icon"/>,id:4},
+            {path:"/admin/donations",title:"Donations",icon:<FaBiking size={30} className="icon"/>,id:5},
         ],
        
       };

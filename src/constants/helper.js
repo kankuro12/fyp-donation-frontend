@@ -20,4 +20,5 @@ const NormalTime = ({dateStr}) => {
 
 
 const donationStatus=["Pending","Rider Assigned","Picked Up"];
+
 module.exports = { getLocalDate ,NormalTime,donationStatus};
