@@ -16,6 +16,7 @@ import UserDonationDetail from "../page/user/donationsDetail";
 import AdminDonation from "../page/admin/donations";
 import AdminDonationDetail from "../page/admin/donations/details";
 import AboutPage from "../page/about";
+import Organization from "../page/org";
 export default function Router() {
     return useRoutes([
         {
@@ -55,6 +56,10 @@ export default function Router() {
         {
             path: "about",
             element: <AboutPage/>
+        },
+        {
+            path: "orgs",
+            element: <Organization/>
         },
         {
             path: '/login',
