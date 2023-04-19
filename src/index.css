@@ -74,3 +74,13 @@ label {
   font-weight: 500;
   padding-bottom: 5px;
 }
+
+.social{
+  background:#ED6B4B;
+  color:white;
+}
+
+.social:hover{
+  color:#ED6B4B;
+  background:white;
+}

@@ -11,22 +11,19 @@ export default function AboutPage(){
                     <div className="container">
                         <div className="row">
                             <div className="col-md-3">
-                                <img src="/main.jpg" className="w-100 pb-5" alt=""/>
+                                <img src="/logo-fb.jpg" className="w-100 pb-5" alt=""/>
 
-                                <img src="/main.jpg" className="w-100" alt=""/>
 
                             </div>
-                            <div className="col-md-7 pt-5 ">
+                            <div className="col-md-7 ">
                                 <div className="ps-5">
                                     <h3 style={{fontWeight:"700"}}>Title</h3>
                                     <div style={{color:"#707371"}}>
 
                                         <p>
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit sequi perspiciatis eos necessitatibus animi asperiores voluptate hic officia quis minus a non, cum adipisci beatae aliquid quia sint eum consequuntur!
+                                            At Sahyogh, we believe that small acts of kindness can make a big difference in the world. Our mission is to make it easy for people to donate their unused clothes and other reusable materials to those in need, without the hassle of physically traveling to an organization. Through our web application, we aim to bridge the gap between donors and organizations, providing a convenient platform for people to donate from the comfort of their own homes. Our team is committed to making a positive impact on society, and we strive to create a culture of giving that inspires people to be more socially responsible. Join us in our mission to create a more compassionate and connected world.
                                         </p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit sequi perspiciatis eos necessitatibus animi asperiores voluptate hic officia quis minus a non, cum adipisci beatae aliquid quia sint eum consequuntur!
-                                        </p>
+                                       
                                     </div>
                                 </div>
                             </div>

@@ -17,7 +17,7 @@ export default function Organization(){
                 orgs.map((org)=><div key={org._id}>
                     <div className="row">
                         <div className="col-md-3">
-                            <img src="/main.jpg" className="w-100 pb-5" alt=""/>
+                            <img src="/logo-" className="w-100 pb-5" alt=""/>
                         </div>
                         <div className="col-md-9">
                             <h4 style={{fontWeight:"700"}}>{org.name}</h4>
