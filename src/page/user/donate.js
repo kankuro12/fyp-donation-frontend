@@ -53,7 +53,7 @@ export default function UserDonate() {
         formData.append('userId',user.id)
         API.postForm("user/donate",formData)
         .then((data)=>{
-            navigate("/user/")
+            setstep(4);
         })
         .catch((err)=>{
 
@@ -157,6 +157,21 @@ export default function UserDonate() {
                         </div>
                         
                     </form>
+                </div>:""
+            }
+            {
+                step==4?<div>
+                    <div className="text-center">
+                        <div>
+                            <img src="/logo-fb.jpg" style={{width:"75px"}} alt="" />
+                        </div>
+                        <div>
+                            <h4 className="mt-3">
+                                Thank you for Donating. <br />
+                                One of our representative will contact you soon.
+                            </h4>
+                        </div>
+                    </div>
                 </div>:""
             }
 
