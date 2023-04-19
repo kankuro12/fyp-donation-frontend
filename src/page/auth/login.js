@@ -111,7 +111,7 @@ export default function Login() {
                                                 <form onSubmit={signup}>
                                                 <div className="position-relative my-3 inputGroup text-center">
                                                         <span className="position-absolute icon"> <FaUser size={22} /> </span>
-                                                        <input type="text" name="name" className="border-0 border-bottom w-100" placeholder="Enter Your Address" required />
+                                                        <input type="text" name="name" className="border-0 border-bottom w-100" placeholder="Enter Your Name" required />
                                                     </div>
                                                     <div className="position-relative my-3 inputGroup text-center">
                                                         <span className="position-absolute icon"> <FaEnvelope size={22} /> </span>
