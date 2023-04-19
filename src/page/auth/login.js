@@ -94,8 +94,8 @@ export default function Login() {
                                                         <span className="position-absolute icon"> <FaEyeSlash size={22} /> </span>
                                                         <input type="password" name="password" className="border-0 border-bottom w-100" placeholder="Password" />
                                                     </div>
-                                                    <div className="d-flex align-items-center justify-content-between pt-2">
-                                                        <a className="linkFlare" href="#"><small>Forgot Password?</small></a>
+                                                    <div className="d-flex align-items-center justify-content-end pt-2">
+                                                        {/* <a className="linkFlare" href="#"><small>Forgot Password?</small></a> */}
                                                         <button className="btn btn-accent px-4 rounded-pill">LOGIN</button>
                                                     </div>
                                                 </form>
