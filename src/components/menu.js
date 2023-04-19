@@ -12,9 +12,9 @@ export default function Menu(){
                 <div className="parts col">Logo</div>
                 <div className="parts col text-center">
                     <Link className="link" to="/home">Home</Link>
-                    <Link className="link" to="/home">About</Link>
-                    <Link className="link" to="/home">Organizations</Link>
-                    <Link className="link" to="/home">Contact Us</Link>
+                    <Link className="link" to="/about">About</Link>
+                    <Link className="link" to="/orgs">Organizations</Link>
+                    <Link className="link" to="/contactus">Contact Us</Link>
                 </div>
                     {
                         
