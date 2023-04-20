@@ -28,7 +28,7 @@ export default function UserLayout() {
 
                                     <div>
                                         {user.name} <br />
-                                        {user.email} a
+                                        {user.email}
                                     </div>
                                     <hr />
                                     <div>

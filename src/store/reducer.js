@@ -41,6 +41,7 @@ export const saveAuth = createAsyncThunk('donation/saveAuth', async (user) => {
 
 export const logout = createAsyncThunk('donation/logout', async (user) => {
     localStorage.removeItem('user');
+    localStorage.removeItem('x_token');
     return null;
 });
 

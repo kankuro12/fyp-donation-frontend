@@ -7,7 +7,7 @@ export default function ContactPage() {
         <div className="container py-5">
 
                 <div className="row">
-                    <div className="col-md-6 d-flex align-items-center">
+                    <div className="col-md-6 d-flex order-md-1 order-2 align-items-center">
                         <div>
 
                             <h3>
@@ -23,7 +23,7 @@ export default function ContactPage() {
                                         Give Us A Call
                                     </a>
                                 </div>
-                                <div className="col-md-7 text-end text-white">
+                                <div className="col-md-7 my-md-0 my-4 text-md-end text-center text-white">
                                         <a href="facebook" className="btn btn-square social me-3">
                                             <FaFacebook ></FaFacebook>
                                         </a>
@@ -41,7 +41,7 @@ export default function ContactPage() {
 
                         </div>
                     </div>
-                    <div className="col-md-6"> 
+                    <div className="col-md-6 order-1 order-md-2 mb-3"> 
                         <img src="/logo-fb.jpg"  className="w-100" alt=""/>
                     </div>
             </div>
