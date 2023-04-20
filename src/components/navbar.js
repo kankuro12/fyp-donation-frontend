@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { logout } from "../store/reducer";
 
 
-import { FaBeer,FaBiking,FaList,FaUsers } from 'react-icons/fa';
+import { FaBeer,FaBiking,FaBox,FaList,FaQuestion,FaUsers, FaWarehouse } from 'react-icons/fa';
 import { RiUserVoiceFill,RiLogoutBoxRFill } from 'react-icons/ri';
 import { BiNotepad } from 'react-icons/bi';
 
@@ -25,9 +25,10 @@ export default function NavBar({role='admin'}){
         admin:[
             {path:"/admin/index",title:"Dashboard",icon:<FaBeer size={30} className="icon"/>,id:1},
             {path:"/admin/category",title:"Category",icon:<FaList size={30} className="icon"/>,id:2},
-            {path:"/admin/organization",title:"Organizations",icon:<FaList size={30} className="icon"/>,id:3},
+            {path:"/admin/organization",title:"Organizations",icon:<FaWarehouse size={30} className="icon"/>,id:3},
             {path:"/admin/rider",title:"Riders",icon:<FaBiking size={30} className="icon"/>,id:4},
-            {path:"/admin/donations",title:"Donations",icon:<FaBiking size={30} className="icon"/>,id:5},
+            {path:"/admin/donations",title:"Donations",icon:<FaBox size={30} className="icon"/>,id:5},
+            {path:"/admin/faq",title:"Faqs",icon:<FaQuestion size={30} className="icon"/>,id:6},
         ],
        
       };

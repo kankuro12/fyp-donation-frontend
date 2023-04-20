@@ -18,6 +18,10 @@ import AdminDonationDetail from "../page/admin/donations/details";
 import AboutPage from "../page/about";
 import Organization from "../page/org";
 import ContactPage from "../page/contact";
+import AdminFAQ from "../page/admin/faq";
+import Faq from "../page/faq";
+import Social from "../page/social";
+import ChangePass from "../page/user/changePass";
 export default function Router() {
     return useRoutes([
         {
@@ -29,6 +33,7 @@ export default function Router() {
                 { path: "organization", element: <AdminOrganization /> },
                 { path: "rider", element: <AdminRider /> },
                 { path: "donations", element: <AdminDonation /> },
+                { path: "faq", element: <AdminFAQ /> },
                 { path: "donations-detail/:id", element: <AdminDonationDetail /> },
 
                 { path: '', element: <Navigate to="/admin/index" replace={true} /> },
@@ -43,17 +48,20 @@ export default function Router() {
                 { path: "index", element: <UserDashboard /> },
                 { path: "donate", element: <UserDonate /> },
                 { path: "donations", element: <UserDonations /> },
+                { path: "changepass", element: <ChangePass /> },
                 { path: "donation-detail/:id", element: <UserDonationDetail /> },
-
+                
                 { path: '', element: <Navigate to="/user/index" replace={true} /> },
                 { path: '*', element: <Navigate to="/user/index" replace={true} /> },
-
+                
             ]
         },
         {
             path: "home",
             element: <HomePage/>
         },
+        { path: "faq", element: <Faq /> },
+        { path: "social", element: <Social /> },
         {
             path: "about",
             element: <AboutPage/>

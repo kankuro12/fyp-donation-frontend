@@ -9,11 +9,13 @@ export default function Menu(){
             <div className="">
 
             <div className="d-flex ">
-                <div className="parts col">Logo</div>
-                <div className="parts col text-center">
+                <div className="parts col-md-2">Logo</div>
+                <div className="parts col-md-8 text-center">
                     <Link className="link" to="/home">Home</Link>
                     <Link className="link" to="/about">About</Link>
                     <Link className="link" to="/orgs">Organizations</Link>
+                    <Link className="link" to="/faq">Faqs</Link>
+                    <Link className="link" to="/social">social</Link>
                     <Link className="link" to="/contactus">Contact Us</Link>
                 </div>
                     {
@@ -30,7 +32,7 @@ export default function Menu(){
                             </div>
                         :
 
-                        <div className="parts col text-end">
+                        <div className="parts col-md-2 text-end">
                             <Link className="link" to="/login">Log In / Register</Link>
                             <Link className="link" to="/user/donate">Donate Now</Link>
                         </div>

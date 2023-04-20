@@ -36,6 +36,10 @@ export default function UserLayout() {
                                     </div>
                                     <hr />
                                     <div>
+                                        <Link to="/user/changepass">Change Password</Link>
+                                    </div>
+                                    <hr />
+                                    <div>
                                         <a onClick={()=>{dispatch(logout())}}>Logout</a>
                                     </div>
                                     <hr />
