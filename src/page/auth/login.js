@@ -4,7 +4,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { saveAuth } from "../../store/reducer";
 import "../../styles/auth.css";
 import API from "../../api";
-import { FaAd, FaEnvelope, FaEyeSlash, FaUser } from 'react-icons/fa';
+import { FaAd, FaEnvelope, FaEyeSlash, FaPhone, FaUser } from 'react-icons/fa';
 
 import './auth.css';
 import Menu from "../../components/menu";
@@ -109,9 +109,13 @@ export default function Login() {
                                                     <h2 className="h3 pb-3">Signup</h2>
                                                 </div>
                                                 <form onSubmit={signup}>
-                                                <div className="position-relative my-3 inputGroup text-center">
+                                                    <div className="position-relative my-3 inputGroup text-center">
                                                         <span className="position-absolute icon"> <FaUser size={22} /> </span>
                                                         <input type="text" name="name" className="border-0 border-bottom w-100" placeholder="Enter Your Name" required />
+                                                    </div>
+                                                    <div className="position-relative my-3 inputGroup text-center">
+                                                        <span className="position-absolute icon"> <FaPhone size={22} /> </span>
+                                                        <input type="text" name="phone" className="border-0 border-bottom w-100" placeholder="Enter Your Phone No." required />
                                                     </div>
                                                     <div className="position-relative my-3 inputGroup text-center">
                                                         <span className="position-absolute icon"> <FaEnvelope size={22} /> </span>

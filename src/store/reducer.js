@@ -35,13 +35,14 @@ export const setupLogin = createAsyncThunk('donation/setupLogin', async (options
 
 export const saveAuth = createAsyncThunk('donation/saveAuth', async (user) => {
     localStorage.setItem('user', JSON.stringify(user));
+    console.log(user);
     return user;
 });
 
 
 export const logout = createAsyncThunk('donation/logout', async (user) => {
     localStorage.removeItem('user');
-    localStorage.removeItem('x_token');
+    localStorage.removeItem('_xtoken');
     return null;
 });
 

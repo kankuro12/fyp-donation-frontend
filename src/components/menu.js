@@ -6,34 +6,57 @@ import { FaBars, FaCross, FaHamburger, FaTimes } from 'react-icons/fa';
 export default function Menu() {
     const logged = useSelector((state) => state.donation.logged);
     const user = useSelector((state) => state.donation.user);
-    const ismob = window.innerWidth <= 425;
+    const [ismob, setIsMob] = useState(window.innerWidth <= 425);
     const [show, setshow] = useState(false);
     const hide = () => {
         setshow(false);
     }
+
+    window.addEventListener('resize', function () {
+        console.log("resize", window.innerWidth <= 425);
+        setIsMob(window.innerWidth <= 425);
+    });
+
     return (
 
         ismob ?
             <div className="mobilemenu">
                 <div className='mobilemenu-header d-flex justify-content-between px-3'>
                     <span>Logo</span>
-                    <span onClick={()=>setshow(!show)}>
+                    <span onClick={() => setshow(!show)}>
                         {
-                            show?
-                            <FaTimes ></FaTimes>
-                            : 
-                            <FaBars></FaBars>
+                            show ?
+                                <FaTimes ></FaTimes>
+                                :
+                                <FaBars></FaBars>
                         }
                     </span>
                 </div>
                 {
                     show ? <div className="mobilemenu-sidebar px-3">
-                        <Link className="link" onClick={() => { hide(); }} to="/home">Home</Link>
-                        <Link className="link" onClick={() => { hide(); }}  to="/about">About</Link>
-                        <Link className="link" onClick={() => { hide(); }}  to="/orgs">Organizations</Link>
-                        <Link className="link" onClick={() => { hide(); }}  to="/faq">Faqs</Link>
-                        <Link className="link" onClick={() => { hide(); }}  to="/social">social</Link>
-                        <Link className="link" onClick={() => { hide(); }}  to="/contactus">Contact Us</Link>
+                        <Link className="link mb-2" onClick={() => { hide(); }} to="/home">Home</Link>
+                        <Link className="link mb-2" onClick={() => { hide(); }} to="/about">About</Link>
+                        <Link className="link mb-2" onClick={() => { hide(); }} to="/orgs">Organizations</Link>
+                        <Link className="link mb-2" onClick={() => { hide(); }} to="/faq">Faqs</Link>
+                        <Link className="link mb-2" onClick={() => { hide(); }} to="/social">social</Link>
+                        <Link className="link mb-2" onClick={() => { hide(); }} to="/contactus">Contact Us</Link>
+                        {
+
+                            logged ?
+
+                                user.role == 'admin'?
+                                        <Link className="link mb-2" to="/admin">Admin Panel </Link>
+                                    : <div >
+                                        <Link className="link mb-2" to="/user"> Hello!! {user.name}</Link>
+                                        <Link className="link mb-2" to="/user/donate">Donate Now</Link>
+                                    </div>
+                                :
+
+                                <div >
+                                    <Link className="link mb-2" to="/login">Log In / Register</Link>
+                                    <Link className="link mb-2" to="/user/donate">Donate Now</Link>
+                                </div>
+                        }
                     </div> : ""
                 }
 

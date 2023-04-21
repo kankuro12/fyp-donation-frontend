@@ -28,11 +28,17 @@ export default function UserLayout() {
 
                                     <div>
                                         {user.name} <br />
-                                        {user.email}
+                                        {user.email} <br />
+                                        {user.phone}
                                     </div>
+                                    
                                     <hr />
                                     <div>
                                         <Link to="/user/donations">My Donations</Link>
+                                    </div>
+                                    <hr />
+                                    <div>
+                                        <Link to="/user/profile">Update Profile</Link>
                                     </div>
                                     <hr />
                                     <div>

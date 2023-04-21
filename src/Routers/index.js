@@ -22,6 +22,7 @@ import AdminFAQ from "../page/admin/faq";
 import Faq from "../page/faq";
 import Social from "../page/social";
 import ChangePass from "../page/user/changePass";
+import UserProfile from "../page/user/profile";
 export default function Router() {
     return useRoutes([
         {
@@ -48,6 +49,7 @@ export default function Router() {
                 { path: "index", element: <UserDashboard /> },
                 { path: "donate", element: <UserDonate /> },
                 { path: "donations", element: <UserDonations /> },
+                { path: "profile", element: <UserProfile /> },
                 { path: "changepass", element: <ChangePass /> },
                 { path: "donation-detail/:id", element: <UserDonationDetail /> },
                 
