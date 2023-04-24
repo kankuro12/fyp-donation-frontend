@@ -53,8 +53,8 @@ export default function Router() {
                 { path: "changepass", element: <ChangePass /> },
                 { path: "donation-detail/:id", element: <UserDonationDetail /> },
                 
-                { path: '', element: <Navigate to="/user/index" replace={true} /> },
-                { path: '*', element: <Navigate to="/user/index" replace={true} /> },
+                { path: '', element: <Navigate to="/user/donations" replace={true} /> },
+                { path: '*', element: <Navigate to="/user/donations" replace={true} /> },
                 
             ]
         },

@@ -24,7 +24,7 @@ export default function UserLayout() {
                         <div className="row">
 
                             <div className="col-md-3">
-                                <div className="shadow p-2">
+                                <div className="shadow p-2 bg-white">
 
                                     <div>
                                         {user.name} <br />
@@ -53,8 +53,8 @@ export default function UserLayout() {
 
                                 </div>
                             </div>
-                            <div className="col-md-9">
-                                <div className="shadow p-3" style={{minHeight:"400px"}}>
+                            <div className="col-md-9" >
+                                <div className="shadow p-3 bg-white" style={{minHeight:"400px"}}>
                                     <Outlet/>
                                 </div>
                             </div>
