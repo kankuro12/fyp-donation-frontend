@@ -23,7 +23,7 @@ export default function Menu() {
             <div className="mobilemenu">
                 <div className='mobilemenu-header d-flex justify-content-between px-3'>
                     <span>
-                        <img src="/logo-crop.png" alt="" style={{maxWidth:"200px"}} />
+                        <img src="/logo-crop.png" alt="" style={{maxWidth:"200px",maxHeight:"35px"}} />
                     </span>
                     <span onClick={() => setshow(!show)}>
                         {
