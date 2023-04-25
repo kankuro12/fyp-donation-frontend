@@ -22,7 +22,9 @@ export default function Menu() {
         ismob ?
             <div className="mobilemenu">
                 <div className='mobilemenu-header d-flex justify-content-between px-3'>
-                    <span>Logo</span>
+                    <span>
+                        <img src="/logo-crop.png" alt="" style={{maxWidth:"200px"}} />
+                    </span>
                     <span onClick={() => setshow(!show)}>
                         {
                             show ?
@@ -65,8 +67,11 @@ export default function Menu() {
             <div className="  Menu">
                 <div className="">
 
-                    <div className="d-flex ">
-                        <div className="parts col-md-2">Logo</div>
+                    <div className="d-flex align-items-center">
+                        <div className="parts col-md-2">
+                            <img src="/logo-crop.png" alt="" style={{maxWidth:"200px"}} />
+
+                        </div>
                         <div className="parts col-md-7 text-center">
                             <Link className="link" to="/home">Home</Link>
                             <Link className="link" to="/about">About</Link>
